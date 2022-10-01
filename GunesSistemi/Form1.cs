@@ -33,7 +33,7 @@ namespace GunesSistemi
             if (gokCismi.GetType() == typeof(Yildiz))
             {
                Yildiz yildiz =  (gokCismi as Yildiz); //type of da da tipini döner gokcismini yildiz olarak algýladý çünkü biz gokcismini 3 farklý þekilde tanýmlamýþtýk
-                MessageBox.Show($"Id: {yildiz.Id}\nAdý: {yildiz.Adi}\nYarýÇap: {yildiz.YariCap}\nSýcaklýk : {yildiz.SicaklikC} C ({yildiz.SicaklikF} F)");
+                MessageBox.Show($"Id: {yildiz.Id}\nAdý: {yildiz.Adi}\nYarýÇap: {yildiz.YariCap}\nSýcaklýk : {yildiz.SicaklikC} C ({yildiz.SicaklikF} F)", nameof(Yildiz));
 
             }
 
@@ -41,15 +41,16 @@ namespace GunesSistemi
             {
                 Uydu uydu = (gokCismi as Uydu); 
 
-                MessageBox.Show($"Id: {uydu.Id}\nAdý: {uydu.Adi}\nYarýÇap: {uydu.YariCap}\nGezegenId:  {uydu.GezegenId}");
+                MessageBox.Show($"Id: {uydu.Id}\nAdý: {uydu.Adi}\nYarýÇap: {uydu.YariCap}\nGezegenId:  {uydu.GezegenId}", nameof(Uydu));
             }
 
             else 
             {
                 Gezegen gezegen = (gokCismi as Gezegen);
                 string yasam = gezegen.YasamVarMi ? "yaþam var" : " yaþam yok";
-                MessageBox.Show($"Id: {gezegen.Id}\nAdý: {gezegen.Adi}\nYarýÇap: {gezegen.YariCap}\nUyduId:  {gezegen.UyduIdleri} \nYasamVarmi :  {yasam} \nYýldýz Id :  {gezegen.YildizId}");
+                MessageBox.Show($"Id: {gezegen.Id}\nAdý: {gezegen.Adi}\nYarýÇap: {gezegen.YariCap}\nYasamVarmi :  {yasam} \nYýldýz Id :  {gezegen.YildizId}", nameof(Gezegen));
             }
+            //en son name of yazarak message boxa bi görev daha verdik ve üste olayýn adýný yazdýrdýk... 
         }
     }
 }
