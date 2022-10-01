@@ -11,6 +11,22 @@ namespace GunesSistemi.Services.Bases
     {
         GokCismiBase _gokCismi;
 
+        public GokCismiBase DetayGetir(int id)
+        {
+            _gokCismi = null;
+            GokCismiBase[] gokCisimleri = Listele();
+            foreach (GokCismiBase gokCismi in gokCisimleri)
+            {
+                if (gokCismi.Id == id)
+                {
+                    _gokCismi = gokCismi;
+                    break;
+                }
+                    
+            }
+            return _gokCismi;
+        }
+
         public GokCismiBase[] Listele()
         {
             GokCismiBase[] gokCisimleri = new GokCismiBase[3];
@@ -19,7 +35,11 @@ namespace GunesSistemi.Services.Bases
                 Adi = "Güneş",
                 Id = 0,
                 SicaklikC = 2000,
-                YariCap = 5000
+                YariCap = 5000,
+                GezegenIdleri = new int[]
+                {
+                    3
+                }
             };
             gokCisimleri[0] = _gokCismi;
             _gokCismi = new Gezegen()
@@ -28,7 +48,11 @@ namespace GunesSistemi.Services.Bases
                 Id = 3,
                 YariCap = 2000,
                 YasamVarMi = true,
-                YildizId = 0
+                YildizId = 0,
+                UyduIdleri = new int[]
+                {
+                    11
+                }
             };
             gokCisimleri[1] = _gokCismi;
             _gokCismi = new Uydu()
